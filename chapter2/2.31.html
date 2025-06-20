@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square(x) {
+        return x * x
+    }
+    function tree_map(f, tree) {
+        return map(sub_tree => is_null(sub_tree) ? null :
+            is_pair(sub_tree) ? tree_map(f, sub_tree) : f(sub_tree), tree
+        )
+    }
+    function square_tree(tree) {
+        return tree_map(square , tree)
+    }
+</script>
+</body>
+</html>
