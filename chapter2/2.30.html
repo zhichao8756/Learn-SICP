@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square_tree(tree) {
+        return map(sub_tree => is_pair(sub_tree) ?
+            square_tree(sub_tree) : sub_tree * sub_tree, tree
+        )
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function upper_bound(p) {
+        return p + p * 0.01
+    }
+    function lower_bound(p) {
+        return p - p * 0.01
+    }
+    function sub_interval(x, y) {
+        return make_interval(lower_bound(x) - upper_bound(y),
+            upper_bound(x) - lower_bound(y));
+    }
+</script>
+</body>
+</html>

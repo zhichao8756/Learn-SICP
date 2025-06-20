@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 使用递归计算
+    function counter(n) {
+        return n < 3 ?
+            n : counter(n - 1) + 2 * counter(n - 2) + 3 * counter(n - 3)
+    }
+    let a = counter(5)
+    console.log(a)
+
+    // 使用迭代计算
+    function fTail(n, a = 0, b = 1, c = 2, i = 3) {
+        return n < 3
+            ? n
+            : i > n
+                ? c
+                : fTail(n, b, c, c + 2 * b + 3 * a, i + 1);
+    }
+
+    console.log(fTail(5))
+    function fIterative(n) {
+        if (n < 3) {
+            return n;
+        }
+
+        let a = 0; // f(0)
+        let b = 1; // f(1)
+        let c = 2; // f(2)
+
+        for (let i = 3; i <= n; i++) {
+            let next = c + 2 * b + 3 * a;
+            a = b;
+            b = c;
+            c = next;
+        }
+
+        return c;
+    }
+
+    console.log(fIterative(5))
+</script>
+</body>
+</html>

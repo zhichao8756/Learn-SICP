@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square_list(items) {
+        return is_null(items) ?
+            null : pair(head(items) * head(items), square_list(tail(items)))
+    }
+    function map(fun, items) {
+        return is_null(items) ?
+            null: pair(fun(head(items)), map(fun, tail(items)))
+    }
+    function square_list_map(items) {
+        return map(x => x * x, items)
+    }
+</script>
+</body>
+</html>

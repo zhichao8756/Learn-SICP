@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  fun1(item) {
+        return is_null(tail(items)) ?
+            items :
+            ! is_pair(items) ?
+                0 :
+                fun1(tail(item))
+    }
+    list(1, 3, list(5, 7), 9)
+    function  fun2(item) {
+        return is_null(items) ?
+            0 :
+            ! is_pair(items) ?
+                0 :
+                fun1(head(item))
+    }
+    list(list(7))
+</script>
+</body>
+</html>

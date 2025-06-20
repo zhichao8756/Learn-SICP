@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fringe(item) {
+        return is_null(item) ?
+            null:
+            is_pair(item) ?
+                pair(fringe(head(item)), fringe(tail(item))) : list(item)
+    }
+    const x = list(list(1, 2), list(3, 4))
+    fringe(x)
+</script>
+</body>
+</html>

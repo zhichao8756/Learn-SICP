@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function makeSegment(x, y) {
+        return {
+            x: x, y: y
+        }
+    }
+    function startSegment(x, y) {
+        return makeSegment(x, y)
+    }
+    function end_segment(x, y) {
+        return makeSegment(x, y)
+    }
+    function print_segment(p) {
+        console.log(`(${p.x}, ${p.y})`);
+    }
+    function middle_segment(p1, p2) {
+        const middle_x = (p1.x + p2.x) / 2;
+        const middle_y = (p1.y + p2.y) / 2;
+        return makeSegment(middle_x, middle_y);
+    }
+    // startSegment(3, 1)
+    // end_segment(1, 1)
+    print_segment(startSegment(3, 1))
+    print_segment(end_segment(1, 1))
+    print_segment(middle_segment(startSegment(3, 1), end_segment(1, 1)))
+</script>
+</body>
+</html>

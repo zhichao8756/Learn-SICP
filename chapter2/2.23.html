@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function for_each(fun, items) {
+        if (is_null(items)){
+            return undefined;
+        } else {
+            fun(head(items));
+            for_each(fun, tail(items));
+        }
+    }
+    for_each(x => display(x), list(12,33,556))
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function reverse_tree(items) {
+        return is_null(items)
+            ? null :
+            is_pair(items) ?
+                append(reverse_tree(tail(items)), pair(head(items), null)) : null;
+    }
+    const x = list(list(1, 2), list(3, 4))
+    list(list(3, 4), list(1, 2))
+    function deep_reverse(items){
+        return is_null(items)
+            ? null
+            : is_pair(items)
+                ? append(deep_reverse(tail(items)),
+                    pair(deep_reverse(head(items)),
+                        null))
+                : items;
+    }
+    list(list(4, 3), list(2, 1))
+
+</script>
+</body>
+</html>

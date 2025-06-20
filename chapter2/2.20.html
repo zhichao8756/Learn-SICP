@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function plus_curried(x) {
+        return y => x + y;
+    }
+    function brooks(f, list) {
+        return is_null(list)
+            ? f
+            : brooks(f(head(list)), tail(list));
+    }
+    function brooks_curried(items) {
+        return brooks(head(items), tail(items));
+    }
+
+
+    plus_curried(3)(4)
+
+    brooks_curried(list(plus_curried, 3, 4));
+
+    brooks_curried(
+        list(brooks_curried, list(plus_curried, 3, 4)
+        ))
+</script>
+</body>
+</html>

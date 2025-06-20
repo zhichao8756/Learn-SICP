@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function pair(x, y) {
+        return m => m(x, y);
+    }
+    function head(x, y) {
+        return (m => m(x, y))((p, q) => p);
+    }
+
+    const x = pair(1, 2);
+    head(x)
+    console.log(x)
+    console.log(head(1, 2));
+</script>
+</body>
+</html>
